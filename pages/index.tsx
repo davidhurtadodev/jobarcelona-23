@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>My recipes</title>
       </Head>
-      <h1 className="text-2xl ">My recipes</h1>
+      <h1 className="text-3xl font-bold mb-8">My recipes</h1>
       <Form />
     </Layout>
   );

@@ -14,71 +14,32 @@ const initialState: recipesState = {
   status: 'idle',
 };
 
-export const fetchItemsAsync = createAsyncThunk(
-  'items/fetchItems',
+export const fetchRecipesAsync = createAsyncThunk(
+  'recipes/fetchRecipes',
   async (query: string) => {
     const { results } = await recipesService.getData(query);
     return results;
   }
 );
-export const deleteItemsAsync = createAsyncThunk(
-  'items/deleteAsync',
-  async (id: string) => {
-    await itemsService.deleteItem(id);
-    return id;
-  }
-);
-export const createItemAsync = createAsyncThunk(
-  'items/createAsync',
-  async (content: Item) => {
-    const item = await itemsService.create(content);
-    return item;
-  }
-);
 
-export const itemsSlice = createSlice({
-  name: 'items',
+export const recipesSlice = createSlice({
+  name: 'recipes',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(HYDRATE, (state, action: any) => {
-        state = action.payload.items;
+      .addCase(fetchRecipesAsync.pending, (state) => {
+        state.status = 'loading';
       })
-      .addCase(createItemAsync.fulfilled, (state, action) => {
+      .addCase(fetchRecipesAsync.fulfilled, (state, action) => {
+        debugger;
         state.status = 'idle';
-        state.items.push(action.payload);
+        state.value = action.payload;
       })
-      .addCase(createItemAsync.rejected, (state, action) => {
-        state.status = 'failed';
-      })
-      .addCase(createItemAsync.pending, (state, action) => {
-        state.status = 'loading';
-      })
-      .addCase(deleteItemsAsync.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(deleteItemsAsync.fulfilled, (state, action) => {
-        const idDeleted: string = action.payload;
-        const filterDeleted = state.items.filter(
-          (item: ItemFetched) => item.id !== idDeleted
-        );
-        state.items = filterDeleted;
-      })
-      .addCase(deleteItemsAsync.rejected, (state, action) => {
-        state.status = 'failed';
-      })
-      .addCase(fetchItemsAsync.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchItemsAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.items = action.payload;
-      })
-      .addCase(fetchItemsAsync.rejected, (state, action) => {
+      .addCase(fetchRecipesAsync.rejected, (state, action) => {
         state.status = 'failed';
       });
   },
 });
 
-export default itemsSlice.reducer;
+export default recipesSlice.reducer;

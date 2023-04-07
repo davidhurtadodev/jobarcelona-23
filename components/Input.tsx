@@ -7,7 +7,12 @@ export default function Input({ onChange, value }: InputProps) {
   return (
     <>
       <label>Search query</label>
-      <input value={value} onChange={(e) => onChange(e)} type="text" />
+      <input
+        className="border-2 px-3 py-2 border-cyan-600 rounded-md"
+        value={value}
+        onChange={(e) => onChange(e)}
+        type="text"
+      />
     </>
   );
 }
