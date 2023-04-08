@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import recipesService from '@/lib/services/recipesService';
+import { Recipe } from '@/lib/types/Recipe';
 
 // Type of state
 export interface recipesState {
-  value: {}[];
+  value: Recipe[];
   status: 'idle' | 'loading' | 'failed';
 }
 
@@ -32,7 +33,6 @@ export const recipesSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchRecipesAsync.fulfilled, (state, action) => {
-        debugger;
         state.status = 'idle';
         state.value = action.payload;
       })

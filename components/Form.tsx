@@ -13,7 +13,7 @@ export default function Form() {
     setQueryText('');
   };
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className="mb-10" onSubmit={onSubmitHandler}>
       <div className="flex flex-col mb-3 ">
         <Input
           value={queryText}
