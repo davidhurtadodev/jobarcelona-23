@@ -34,7 +34,31 @@ export const recipesSlice = createSlice({
       })
       .addCase(fetchRecipesAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.value = action.payload;
+        const data = action.payload;
+        const filteredData = data.map(
+          ({
+            id,
+            title,
+            image,
+            imageType,
+            summary,
+            analyzedInstructions,
+            vegetarian,
+            vegan,
+          }) => {
+            return {
+              id,
+              title,
+              image,
+              imageType,
+              summary,
+              analyzedInstructions,
+              vegetarian,
+              vegan,
+            };
+          }
+        );
+        state.value = filteredData;
       })
       .addCase(fetchRecipesAsync.rejected, (state, action) => {
         state.status = 'failed';

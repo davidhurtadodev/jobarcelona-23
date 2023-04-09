@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { Inter } from 'next/font/google';
 
@@ -15,6 +16,7 @@ export default function Home() {
   const recipesState = useAppSelector(
     (state: RootState) => state.recipes.value
   );
+  console.log(recipesState);
   return (
     <Layout>
       <Head>
@@ -25,7 +27,9 @@ export default function Home() {
       <div className="grid grid-cols-1 justify-items-center  w-full lg:grid-cols-3 xl:grid-cols-4">
         {recipesState
           ? recipesState.map((recipe: Recipe) => (
-              <Card key={recipe.id} title={recipe.title} img={recipe.image} />
+              <Link key={recipe.id} href={`/recipes/${recipe.id}`}>
+                <Card key={recipe.id} title={recipe.title} img={recipe.image} />
+              </Link>
             ))
           : null}
       </div>

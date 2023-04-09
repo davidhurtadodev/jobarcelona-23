@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Input from './Input';
+import Button from './Button';
 import recipesService from '@/lib/services/recipesService';
 import { useAppDispatch } from '@/store/hooks';
 import { fetchRecipesAsync } from '@/store/recipesSlice';
@@ -20,12 +21,12 @@ export default function Form() {
           onChange={(e) => setQueryText(e.currentTarget.value)}
         />
       </div>
-      <button
-        className="bg-[#00843c] text-lg text-white px-4 py-2 rounded-lg"
-        type="submit"
+      <Button
+        buttonType="submit"
+        classNames=" text-lg text-white px-4 py-2 rounded-lg"
       >
         Search
-      </button>
+      </Button>
     </form>
   );
 }
