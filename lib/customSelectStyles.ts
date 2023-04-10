@@ -1,18 +1,24 @@
 import { CSSObjectWithLabel, ControlProps } from 'react-select';
 const customSelectStyles = {
   control: (defaultStyles: CSSObjectWithLabel, state: ControlProps) => {
+    if (state.isFocused) borderColor = 'transparent';
+    return {};
+  },
+  control: (defaultStyles: CSSObjectWithLabel, state: ControlProps) => {
     let borderColor: string = 'rgb(22 163 74)';
-    if (state.isFocused) borderColor = '#F9A109';
-    if (state.isFocused && state.isDisabled) borderColor = '#F9A109';
+    if (state.isFocused) borderColor = 'red';
+    // if (state.isFocused && state.isDisabled) borderColor = '#F9A109';
     return {
       ...defaultStyles,
       '&:hover': {
         borderColor: 'none',
       },
-      borderColor: 'rgb(22 163 74)',
+
+      borderColor: state.isFocused ? 'rgb(59 130 246)' : 'rgb(22 163 74) ',
       padding: '0.5rem 0.75rem',
       borderWidth: '2px',
       borderRadius: '0.375rem',
+      boxShadow: 'none',
     };
   },
   valueContainer: (defaultStyles: CSSObjectWithLabel) => ({

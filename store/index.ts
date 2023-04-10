@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import recipesSlice from './recipesSlice';
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage/session';
+import sessionStorage from 'redux-persist/es/storage/session';
 import { persistReducer, persistStore } from 'redux-persist';
 
 const persistConfig = {

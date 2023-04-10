@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Inter } from 'next/font/google';
-import Select from 'react-select';
+import SelectCustom from '@/components/SelectCustom';
 import Layout from '@/components/Layout';
 import Form from '@/components/Form';
 import Card from '@/components/Card';
@@ -43,13 +43,10 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-8">My recipes</h1>
       <div className="w-[350px]">
         <Form />
-        <label>Filter</label>
-        <Select
-          styles={customSelectStyles}
-          autoFocus
+        <SelectCustom
+          value={selected}
           onChange={handleSelectChange}
           options={selectOptions}
-          value={selected}
         />
       </div>
       <div className="grid grid-cols-1 justify-items-center  w-full lg:grid-cols-3 xl:grid-cols-4">
