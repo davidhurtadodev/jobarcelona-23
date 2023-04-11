@@ -4,7 +4,7 @@ export interface Recipe {
   image: string;
   imageType: string;
   summary: string;
-  analyzedInstructions?: AnalyzedInstructionsEntity[] | null;
+  analyzedInstructions?: AnalyzedInstructionsEntity[];
   vegetarian: boolean;
   vegan: boolean;
 }
@@ -15,7 +15,7 @@ export interface AnalyzedInstructionsEntity {
 export interface StepsEntity {
   number: number;
   step: string;
-  ingredients?: (IngredientsEntityOrEquipmentEntity | null)[] | null;
+  ingredients?: IngredientsEntityOrEquipmentEntity[] | null;
   equipment?: (IngredientsEntityOrEquipmentEntity1 | null)[] | null;
 }
 export interface IngredientsEntityOrEquipmentEntity {

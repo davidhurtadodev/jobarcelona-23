@@ -35,6 +35,7 @@ export const recipesSlice = createSlice({
       .addCase(fetchRecipesAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         const data = action.payload;
+        console.log(data);
         const filteredData = data.map(
           ({
             id,
@@ -45,7 +46,7 @@ export const recipesSlice = createSlice({
             analyzedInstructions,
             vegetarian,
             vegan,
-          }) => {
+          }: Recipe) => {
             return {
               id,
               title,

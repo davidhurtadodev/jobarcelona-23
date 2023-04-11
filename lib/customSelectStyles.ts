@@ -1,10 +1,6 @@
 import { CSSObjectWithLabel, ControlProps } from 'react-select';
 const customSelectStyles = {
   control: (defaultStyles: CSSObjectWithLabel, state: ControlProps) => {
-    if (state.isFocused) borderColor = 'transparent';
-    return {};
-  },
-  control: (defaultStyles: CSSObjectWithLabel, state: ControlProps) => {
     let borderColor: string = 'rgb(22 163 74)';
     if (state.isFocused) borderColor = 'red';
     // if (state.isFocused && state.isDisabled) borderColor = '#F9A109';

@@ -9,9 +9,6 @@ import Card from '@/components/Card';
 import { useAppSelector } from '@/store/hooks';
 import { RootState } from '@/store';
 import { Recipe } from '@/lib/types/Recipe';
-import customSelectStyles from '@/lib/customSelectStyles';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const recipesState = useAppSelector(
@@ -53,7 +50,13 @@ export default function Home() {
         {recipesState
           ? filteredRecipes.map((recipe: Recipe) => (
               <Link key={recipe.id} href={`/recipes/${recipe.id}`}>
-                <Card key={recipe.id} title={recipe.title} img={recipe.image} />
+                <Card
+                  key={recipe.id}
+                  title={recipe.title}
+                  img={recipe.image}
+                  isVegetarian={recipe.vegetarian}
+                  isVegan={recipe.vegan}
+                />
               </Link>
             ))
           : null}
