@@ -1,38 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My recipes (JOBarcelona '23)
 
-## Getting Started
+## Background |
 
-First, run the development server:
+The project is a NUWE's challenge for entering the JOBarcelona '23 Hackathon
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Usage
+
+App for querying the Spoonacular's API. You can enter any term in the searchbar and the app will show you a group of cards with the API's response. In this case, we're interested in the recipe's ingredients and if the recipe is vegan or veggie. You can filter the recipes by wether they are veggies or vegans. Also, you can navigate to a dynamic route with each recipe. There you can see the recipe's ingredients and go back to the home page.
+
+## Installation
+
+```shell
+    # run commands
+    npm run start
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Typescript: we use Typescript because we think that coding with it help us avoid bugs.
+- NextJS: React's framework that helps us creating a structure and has a great routing system.
+- React: it helps us creating reusable components.
+- TailwindCSS: CSS framework.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Roadmap and visuals
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Demo: https://jolly-dolphin-562a8c.netlify.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![alt text](./project.png 'Plan cards')
 
-## Learn More
+## Contact info
 
-To learn more about Next.js, take a look at the following resources:
+LinkedIn: https://www.linkedin.com/in/david-hurtado-g
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Codefactor
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[![CodeFactor](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards/badge)](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards)
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[MIT](https://opensource.org/licenses/MIT)
