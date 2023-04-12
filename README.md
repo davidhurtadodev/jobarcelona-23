@@ -12,7 +12,7 @@ App for querying the Spoonacular's API. You can enter any term in the searchbar 
 
 ```shell
     # run commands
-    npm run start
+    npm run dev
 
 ```
 
@@ -21,6 +21,7 @@ App for querying the Spoonacular's API. You can enter any term in the searchbar 
 - Typescript: we use Typescript because we think that coding with it help us avoid bugs.
 - NextJS: React's framework that helps us creating a structure and has a great routing system.
 - React: it helps us creating reusable components.
+- Redux Toolkit: library for managing global state. It helps us to separate the global state logic from the UI.
 - TailwindCSS: CSS framework.
 
 ## Roadmap and visuals
@@ -35,7 +36,7 @@ LinkedIn: https://www.linkedin.com/in/david-hurtado-g
 
 ## Codefactor
 
-[![CodeFactor](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards/badge)](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards)
+[![CodeFactor](https://www.codefactor.io/repository/github/davidhurtadodev/jobarcelona-23/badge)](https://www.codefactor.io/repository/github/davidhurtadodev/jobarcelona-23)
 
 ## License
 

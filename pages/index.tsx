@@ -34,7 +34,7 @@ export default function Home() {
   const filteredRecipes = recipesState.filter((recipe: Recipe) => {
     if (selected.value === 'vegetarian' && recipe.vegetarian) return recipe;
     else if (selected.value === 'vegan' && recipe.vegan) return recipe;
-    return recipe;
+    else if (selected.value === 'all') return recipe;
   });
 
   return (
