@@ -15,6 +15,7 @@ const initialState: recipesState = {
   status: 'idle',
 };
 
+// Fetching thunk
 export const fetchRecipesAsync = createAsyncThunk(
   'recipes/fetchRecipes',
   async (query: string) => {
@@ -29,13 +30,14 @@ export const recipesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      //cases for fetching recipes
       .addCase(fetchRecipesAsync.pending, (state) => {
         state.status = 'loading';
       })
       .addCase(fetchRecipesAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         const data = action.payload;
-        console.log(data);
+
         const filteredData = data.map(
           ({
             id,

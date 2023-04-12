@@ -14,10 +14,11 @@ export default function RecipePage() {
   const router = useRouter();
   const { id } = router.query;
 
-  //Find recipe data
+  // get recipe global state
   const recipesState = useAppSelector(
     (state: RootState) => state.recipes.value
   );
+  //find recipe data
   const selectedRecipe = recipesState.find((recipe: Recipe) => {
     return recipe.id === Number(id);
   });

@@ -14,4 +14,5 @@ const getData = async (query: string) => {
   }
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { getData };

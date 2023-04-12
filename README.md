@@ -35,7 +35,7 @@ LinkedIn: https://www.linkedin.com/in/david-hurtado-g
 
 ## Codefactor
 
-//[![CodeFactor](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards/badge)](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards)
+[![CodeFactor](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards/badge)](https://www.codefactor.io/repository/github/davidhuertado/nuwe-cards)
 
 ## License
 

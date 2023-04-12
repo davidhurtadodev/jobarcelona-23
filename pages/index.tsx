@@ -11,9 +11,11 @@ import { RootState } from '@/store';
 import { Recipe } from '@/lib/types/Recipe';
 
 export default function Home() {
+  // Recipes global state
   const recipesState = useAppSelector(
     (state: RootState) => state.recipes.value
   );
+
   const selectOptions = [
     { value: 'all', label: 'All' },
     { value: 'vegan', label: 'Vegan' },
@@ -22,14 +24,17 @@ export default function Home() {
 
   const [selected, setSelected] = useState(selectOptions[0]);
 
-  const handleSelectChange = (selectedOption) => {
+  const handleSelectChange = (selectedOption: {
+    value: string;
+    label: string;
+  }) => {
     setSelected(selectedOption);
   };
 
   const filteredRecipes = recipesState.filter((recipe: Recipe) => {
     if (selected.value === 'vegetarian' && recipe.vegetarian) return recipe;
-    if (selected.value === 'vegan' && recipe.vegan) return recipe;
-    if (selected.value === 'all') return recipe;
+    else if (selected.value === 'vegan' && recipe.vegan) return recipe;
+    return recipe;
   });
 
   return (
