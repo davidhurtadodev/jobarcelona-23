@@ -25,6 +25,7 @@ App for querying the Spoonacular's API. You can enter any term in the searchbar 
 
 ```shell
     # run commands
+    npm i
     npm run dev
 
 ```
